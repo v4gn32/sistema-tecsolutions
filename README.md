@@ -1,54 +1,68 @@
-# 💰 VOF Financeiro
+# 🛠️ TecSolutions Service Manager
 
-Sistema completo de gestão financeira pessoal, com suporte a lançamentos de receitas, despesas, parcelamentos e emissão de notas como MEI. Desenvolvido com Angular, Node.js, PostgreSQL e Docker.
+Sistema web completo para automação de relatórios técnicos e gestão de atendimentos da empresa TecSolutions. A plataforma visa substituir o uso manual de arquivos Word e pastas no OneDrive por um sistema moderno com dashboards, controle de clientes, tickets, equipamentos, relatórios e muito mais.
 
-## 📌 Funcionalidades
+---
 
-- Login com senha (usuário comum e administrador)
-- Dashboard moderna com cards de resumo
-- Lançamento de receitas e despesas
-- Cálculo automático de totais
-- Controle de parcelamentos
-- Registro de notas fiscais emitidas como MEI
-- Backend com API RESTful segura (JWT)
-- Banco de dados PostgreSQL
-- Docker para facilitar deploy e ambiente local
+## 🎯 Objetivo
+
+Automatizar o processo de geração e organização de relatórios técnicos, otimizando o fluxo de trabalho entre técnicos e administradores da TecSolutions.
+
+---
+
+## 🔧 Funcionalidades
+
+- Login com autenticação JWT (admin e técnico)
+- Cadastro e gerenciamento de clientes
+- Registro de equipamentos por cliente
+- Criação de tickets de atendimento
+  - Tipo: Presencial, Remoto, Laboratório
+  - Registro de materiais e horas técnicas
+- Geração automática de relatórios em PDF
+- Upload de fotos e anexos
+- Filtros por cliente, período, status e tipo de atendimento
+- Dashboard com estatísticas e pendências
+- Histórico de serviços e envio automático por e-mail
+- Controle de usuários e permissões
 
 ---
 
 ## 🧱 Tecnologias Utilizadas
 
-### Frontend
-- Angular 20
-- Tailwind CSS
-
 ### Backend
 - Node.js
 - Express
-- PostgreSQL
 - Prisma ORM
-- JWT
+- PostgreSQL
+- JWT para autenticação
+- Multer para upload de arquivos
+
+### Frontend
+- Angular 20
+- Tailwind CSS
+- Angular Services + HTTP Client
 
 ### DevOps
-- Docker + Docker Compose
+- Docker e Docker Compose
+- Deploy via Render ou Railway (sugestão)
 
 ---
 
-## 🛠️ Como rodar o projeto localmente
+## 🚀 Como rodar o projeto localmente
 
 ### Pré-requisitos
 
 - Node.js 18+
+- Angular CLI
 - Docker e Docker Compose
-- Angular CLI `npm install -g @angular/cli`
 
 ### Passo a passo
 
 1. Clone o repositório:
 
 ```bash
-git clone https://github.com/v4gn32/vof-financeiro.git
-cd vof-financeiro
+git clone https://github.com/v4gn32/sistema-tecsolutions.git
+cd sistema-tecsolutions
 ```
 
 2. Instale as dependências:
@@ -63,7 +77,7 @@ cd ../frontend
 npm install
 ```
 
-3. Inicie os containers com PostgreSQL:
+3. Inicie banco com Docker:
 
 ```bash
 docker-compose up -d
@@ -98,18 +112,18 @@ ng serve
 ## 📂 Estrutura de Diretórios
 
 ```
-vof-financeiro/
+sistema-tecsolutions/
 │
-├── backend/              # Backend Node.js + Express
+├── backend/               # Backend Node.js + Express
 │   ├── src/
 │   ├── prisma/
 │   └── .env
 │
-├── frontend/             # Frontend Angular
+├── frontend/              # Frontend Angular
 │   ├── src/
 │   └── angular.json
 │
-├── docker-compose.yml    # Orquestração do PostgreSQL
+├── docker-compose.yml     # PostgreSQL e serviços
 └── README.md
 ```
 
@@ -118,7 +132,6 @@ vof-financeiro/
 ## ✍️ Autor
 
 Desenvolvido por Vagner Oliveira  
-📧 Contato: [seu-email@email.com]  
 🔗 GitHub: [github.com/v4gn32](https://github.com/v4gn32)
 
 ---
